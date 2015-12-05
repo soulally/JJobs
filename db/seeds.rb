@@ -6,15 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categories = ["한식","일식","중식","양식"]
+categories = [{en:'javascript', ko:'자바스크립트'},{en:'java', ko:'자바'},{en:'ruby',ko:'루비'},{en:'config', ko:'환경'}]
 
 categories.each do |category|
-  0.upto(1) do |i|
+  0.upto(2) do |i|
     p = Post.new
     p.user_id = i + 1
-    p.category = category
-    p.title = "#{category}집#{i} 이름"
-    p.content = "#{category}집#{i} 설명"
-    p.save
+    p.category = category[:en]
+    p.title = "#{category[:ko]} #{i} 이름"
+    p.content = "#{category[:ko]} #{i} 설명"
+    p.save!
+		p.reload.id
   end
 end

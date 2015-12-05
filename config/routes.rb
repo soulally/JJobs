@@ -1,6 +1,6 @@
 Jjobs::Application.routes.draw do
   root "posts#list"
-  get "posts/list_category"
+  get "/:category" => "posts#list_category"
   get "posts/show"
   get "posts/write"
   get "posts/write_complete"
