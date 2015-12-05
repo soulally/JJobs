@@ -1,4 +1,13 @@
 Jjobs::Application.routes.draw do
+  root "posts#list"
+  get "posts/list_category"
+  get "posts/show"
+  get "posts/write"
+  get "posts/write_complete"
+  get "posts/edit"
+  get "posts/edit_complete"
+  get "posts/delete"
+  get "posts/delete_complete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
