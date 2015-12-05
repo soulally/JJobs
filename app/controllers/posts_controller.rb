@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   end
 
   def list_category
-    @posts = Post.where(category: params[:category])
+		@category = params[:category]
+    @posts = Post.where(category: @category)
   end
 
   def show
